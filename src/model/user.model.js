@@ -1,9 +1,18 @@
 import mongoose from "mongoose";
 
-const userScheme = new mongoose.Schema({
-    name: {type: String, required: true},
-    password: {type: String, required: true},
-    balance: {type: Number, required: true}
+const userSchema = new mongoose.Schema({
+    name: {
+        type: String, 
+        required: true
+    },
+    password: {
+        type: String, 
+        required: true
+    },
+    balance: {
+        type: Number, 
+        default: 0
+    }
 });
 
 const User = mongoose.model("User", userSchema);
